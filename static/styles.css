@@ -1,0 +1,227 @@
+/* Modern Minimalist Theme */
+:root {
+    --primary-color: #2D3436;
+    --secondary-color: #636E72;
+    --accent-color: #0984E3;
+    --background-color: #F5F6FA;
+    --card-background: #FFFFFF;
+    --text-color: #2D3436;
+    --border-radius: 8px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Cards */
+.card {
+    background: var(--card-background);
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.2s ease;
+    margin-bottom: 1.5rem;
+    height: 100%;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card-body {
+    height: 100%;
+    padding: 1.5rem;
+    position: relative;
+}
+
+/* Chart Containers */
+.chart-container {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    width: 100%;
+    height: 400px;
+    position: relative;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+#confusion-matrix {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+}
+
+#class-distribution-pie {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#metrics-bar-chart {
+    height: 100%;
+    width: 100%;
+}
+
+/* Metric Cards */
+.metric-card {
+    text-align: center;
+    background: var(--card-background) !important;
+    color: var(--text-color) !important;
+    height: 100%;
+    transition: transform 0.2s;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+}
+
+.metric-card .card-body {
+    padding: 1.5rem;
+}
+
+.metric-card h5 {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.metric-card h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0984E3;
+}
+
+/* Progress Bar */
+.progress {
+    height: 8px;
+    border-radius: 4px;
+    background-color: #E2E8F0;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.progress-bar {
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+/* Form Elements */
+.form-select,
+.form-control {
+    border: 1px solid #E2E8F0;
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.form-select:focus,
+.form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(9, 132, 227, 0.1);
+}
+
+/* Buttons */
+.btn {
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0873c5;
+    transform: translateY(-1px);
+}
+
+/* Tables */
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.table th {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.table td,
+.table th {
+    padding: 1rem;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    max-height: 500px;
+}
+
+/* Alert Styles */
+.alert {
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+}
+
+/* Animation for Loading States */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.loading {
+    animation: pulse 1.5s infinite;
+}
+
+#interim-info {
+    margin-top: 2rem;
+}
+
+#interim-details {
+    margin-bottom: 2rem;
+}
+
+/* Dataset Controls */
+.dataset-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.dataset-select {
+    flex: 1;
+    height: 38px;
+}
+
+.load-btn {
+    height: 38px;
+    min-width: 120px;
+}
