@@ -1,28 +1,29 @@
 /* Modern Minimalist Theme */
 :root {
-    --primary-color: #2D3436;
-    --secondary-color: #636E72;
-    --accent-color: #0984E3;
-    --background-color: #F5F6FA;
-    --card-background: #FFFFFF;
-    --text-color: #2D3436;
-    --border-radius: 8px;
-    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --bg: #0f172a;
+    --panel: #111827;
+    --panel-2: #1f2937;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --border-radius: 12px;
+    --panel-border: rgba(148, 163, 184, 0.18);
+    --card-shadow: 0 24px 70px rgba(2, 6, 23, 0.28);
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: radial-gradient(circle at top, #1e293b 0%, var(--bg) 55%);
+    color: var(--text);
     line-height: 1.6;
 }
 
 /* Cards */
 .card {
-    background: var(--card-background);
-    border: none;
-    border-radius: 10px;
-    box-shadow: var(--box-shadow);
+    background: rgba(17, 24, 39, 0.88);
+    border: 1px solid var(--panel-border);
+    border-radius: 18px;
+    box-shadow: var(--card-shadow);
     transition: transform 0.2s ease;
     margin-bottom: 1.5rem;
     height: 100%;
@@ -35,15 +36,15 @@ body {
 
 .card-body {
     height: 100%;
-    padding: 1.5rem;
+    padding: 1.25rem;
     position: relative;
 }
 
 /* Chart Containers */
 .chart-container {
-    background: var(--card-background);
+    background: transparent;
     border-radius: var(--border-radius);
-    padding: 1rem;
+    padding: 0.5rem;
     width: 100%;
     height: 400px;
     position: relative;
@@ -72,8 +73,8 @@ body {
 /* Metric Cards */
 .metric-card {
     text-align: center;
-    background: var(--card-background) !important;
-    color: var(--text-color) !important;
+    background: transparent !important;
+    color: var(--text) !important;
     height: 100%;
     transition: transform 0.2s;
 }
@@ -91,60 +92,63 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 0.5rem;
-    color: var(--secondary-color);
+    color: var(--muted);
 }
 
 .metric-card h3 {
     font-size: 2rem;
     font-weight: bold;
-    color: #0984E3;
+    color: var(--accent);
 }
 
 /* Progress Bar */
 .progress {
-    height: 8px;
-    border-radius: 4px;
-    background-color: #E2E8F0;
+    height: 10px;
+    border-radius: 6px;
+    background-color: rgba(255,255,255,0.04);
     overflow: hidden;
     margin: 1rem 0;
 }
 
 .progress-bar {
-    background-color: var(--accent-color);
+    background: linear-gradient(90deg, rgba(3,105,161,0.9), var(--accent));
     transition: width 0.3s ease;
 }
 
 /* Form Elements */
 .form-select,
 .form-control {
-    border: 1px solid #E2E8F0;
+    border: 1px solid var(--panel-border);
     border-radius: var(--border-radius);
-    padding: 0.5rem 1rem;
-    transition: all 0.2s ease;
+    padding: 0.6rem 1rem;
+    background: var(--panel-2);
+    color: var(--text);
+    transition: all 0.15s ease;
 }
 
 .form-select:focus,
 .form-control:focus {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 2px rgba(9, 132, 227, 0.1);
+    border-color: var(--accent);
+    box-shadow: 0 6px 30px rgba(2,6,23,0.35);
 }
 
 /* Buttons */
 .btn {
-    border-radius: var(--border-radius);
-    padding: 0.5rem 1.5rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
+    border-radius: 12px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 700;
+    transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
 .btn-primary {
-    background-color: var(--accent-color);
+    background: linear-gradient(135deg, #0284c7, var(--accent));
     border: none;
+    color: #e6f6ff;
 }
 
 .btn-primary:hover {
-    background-color: #0873c5;
     transform: translateY(-1px);
+    opacity: 0.95;
 }
 
 /* Tables */
@@ -155,8 +159,8 @@ body {
 }
 
 .table th {
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: transparent;
+    color: var(--muted);
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.75rem;
@@ -165,8 +169,8 @@ body {
 
 .table td,
 .table th {
-    padding: 1rem;
-    border-bottom: 1px solid #E2E8F0;
+    padding: 0.75rem;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 
 .table-responsive {
@@ -179,6 +183,8 @@ body {
     border: none;
     border-radius: var(--border-radius);
     padding: 1rem;
+    background: rgba(255,255,255,0.02);
+    color: var(--muted);
 }
 
 /* Animation for Loading States */
@@ -224,4 +230,52 @@ body {
 .load-btn {
     height: 38px;
     min-width: 120px;
+}
+
+/* Improve select visibility and sizing to avoid clipped text */
+.form-select,
+.dataset-select {
+    color: var(--text);
+    background: var(--panel-2);
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    line-height: 1.2;
+    min-height: 46px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Override Bootstrap's light cards used for small metric widgets */
+.card.bg-light {
+    background: rgba(255,255,255,0.03) !important;
+    border: 1px solid rgba(255,255,255,0.03) !important;
+}
+.card.bg-light .card-body {
+    color: var(--muted);
+}
+.card.bg-light .card-body h3,
+.card.bg-light .card-body h6 {
+    color: var(--text);
+}
+
+/* Metric values should be high contrast */
+.metric-card .card-body .value,
+.metric-card .card-body h3 {
+    color: var(--text);
+}
+
+/* Make table content readable on dark background */
+.table thead th {
+    color: var(--muted) !important;
+}
+.table tbody td {
+    color: rgba(229,231,235,0.92) !important;
+}
+.table.table-striped tbody tr:nth-of-type(odd) {
+    background: rgba(255,255,255,0.01);
+}
+
+/* Ensure muted helper text is still readable */
+.text-muted {
+    color: rgba(148,163,184,0.7) !important;
 }
